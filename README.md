@@ -1,11 +1,8 @@
-# The Blender AI Plugin
+# The Blender AI Plugin 🚀
 
 Use AI to make changes to your blender scene in seconds! Completely free of charge.
 
 https://github.com/user-attachments/assets/f7564974-2c21-488a-bae7-08f0a039a7ba
-
-This was heavily inspired by Polyfjord's youtube video on controlling blender using AI, go check it out!
-[![Watch the video](https://img.youtube.com/vi/ytomieYqUCQ/0.jpg)](https://www.youtube.com/watch?v=ytomieYqUCQ)
 
 # Installation
 
@@ -50,3 +47,6 @@ Option 2 (Paste API key into box, not recommended):
 # Contribution
 
 Any contributions are welcome! Just open a PR with your changes and as long as they seem beneficial and work well, I will probably merge them. If you have some spare time and want to contribute, it might be cool to have integrations for other model providers or the ability to send the model a screenshot of the current scene :)
+
+This was heavily inspired by Polyfjord's youtube video on controlling blender using AI, go check it out!
+[![Watch the video](https://img.youtube.com/vi/ytomieYqUCQ/0.jpg)](https://www.youtube.com/watch?v=ytomieYqUCQ)
