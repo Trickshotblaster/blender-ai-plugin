@@ -141,6 +141,8 @@ class ExecuteGeneratedScriptOperator(bpy.types.Operator):
             if not generated_code.strip():
                 self.report({'WARNING'}, "Generated code is empty")
                 return {'CANCELLED'}
+            
+            self.report({'WARNING'}, generated_code)
 
             # Add the model's response to the conversation history
             self.context_history.append({
