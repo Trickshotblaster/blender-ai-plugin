@@ -2,10 +2,10 @@
 
 Use AI to make changes to your blender scene in seconds! Completely free of charge.
 
-[![Demo](https://raw.githubusercontent.com/username/repository/branch/path/to/thumbnail.jpg)](https://github.com/Trickshotblaster/blender-ai-plugin/raw/refs/heads/main/demo.mp4)
+https://github.com/user-attachments/assets/f7564974-2c21-488a-bae7-08f0a039a7ba
 
 This was heavily inspired by Polyfjord's youtube video on controlling blender using AI, go check it out!
-[![Video](https://raw.githubusercontent.com/username/repository/branch/path/to/thumbnail.jpg)](https://www.youtube.com/watch?v=ytomieYqUCQ)
+[![Watch the video](https://img.youtube.com/vi/ytomieYqUCQ/0.jpg)](https://www.youtube.com/watch?v=ytomieYqUCQ)
 
 # Installation
 
