@@ -2,7 +2,7 @@
 
 Use AI to make changes to your blender scene in seconds! Completely free of charge.
 
-https://github.com/user-attachments/assets/f7564974-2c21-488a-bae7-08f0a039a7ba
+![Demo Gif](https://github.com/user-attachments/assets/28312688-ccb9-4089-a9b0-58d9d2786e6d)
 
 # Installation
 
