@@ -6,6 +6,8 @@ Use AI to make changes to your blender scene in seconds! Completely free of char
 
 # Installation
 
+**PREREQUISITE:** Make sure you have the ```requests``` pyhon module installed on your system via pip. In a terminal, run the command ```pip install requests``` to ensure that it is installed.
+
 1) Click on the green code button for this repository near the upper right hand corner and download the code as a ZIP file.
 2) Open the download and extract it using the file explorer to wherever you want to put it (just remember the location for later)
 3) Open blender
