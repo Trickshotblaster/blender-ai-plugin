@@ -40,7 +40,7 @@ Option 2 (Paste API key into box, not recommended):
 3) Make sure you have your API key configured then select a model from the dropdown
 4) Enter a prompt and then click ```Generate and Execute Script```
 5) Sometimes this will give errors, just try to adjusts your prompts as needed
-6) If something breaks or the AI starts getting confused, you can always click the ```Clear Context``` button. The AI will forget what it has done and won't know anything about what objects are in the scene, but can still make new objects (and change existing ones if you tell it the exact name of the object)
+6) If something breaks or the AI starts getting confused, you can always click the ```Clear Context``` button. The AI will forget what it has done, but can still make new objects (and change existing ones if you tell it the name of the object)
 7) Remember that this is not a production-grade product and there will likely be many bugs. I made this almost entirely using ChatGPT, so it can't be perfect. If you find any issues, you can edit the code yourself (it's only one python file, you got this!), ask an AI for assistance, or submit an issue on GitHub (although I might not be able to fix it)
 8) Enjoy 🗿
 
