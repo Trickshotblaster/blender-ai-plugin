@@ -42,6 +42,8 @@ PROMPT_DIRECTIVE = (
     "bpy.context.view_layer.objects.active = light_object'"
     "================="
     "You are now to respond only as prompted by the user, in valid python code. Good luck!"
+    "For reference, below is a list of all the current object names in the scene. This will be updated after each response"
+    "so you can use it to find objects in the scene at any point in time."
     "================="
 )
 
@@ -54,6 +56,24 @@ AVAILABLE_MODELS = [
     "gemini-1.5-flash-8b",
     "gemini-1.5-pro",
 ]
+
+def get_scene_objects_list():
+    """Retrieve a list of all objects in the current scene with their names and locations."""
+    objects_info = []
+    for obj in bpy.context.scene.objects:
+        objects_info.append({
+            "name": obj.name,
+            "location": tuple(obj.location)
+        })
+    return objects_info
+
+
+def format_scene_objects(objects_info):
+    """Format the scene object list into a string representation for the prompt."""
+    formatted_list = "\n".join(
+        f"{obj['name']}: {obj['location']}" for obj in objects_info
+    )
+    return f"\n\nScene Objects (name: location):\n{formatted_list}"
 
 class GoogleAIStudioPanel(bpy.types.Panel):
     """Creates a Panel in the 3D View for text input"""
@@ -94,6 +114,11 @@ class ExecuteGeneratedScriptOperator(bpy.types.Operator):
             return {'CANCELLED'}
 
         try:
+            # Retrieve the current scene's objects and append them to the directive
+            objects_info = get_scene_objects_list()
+            scene_objects_text = format_scene_objects(objects_info)
+            full_directive = PROMPT_DIRECTIVE + scene_objects_text
+
             # Add the user's input to the conversation history
             self.context_history.append({
                 "role": "user",
@@ -105,7 +130,7 @@ class ExecuteGeneratedScriptOperator(bpy.types.Operator):
                 "contents": [
                     {
                         "role": "user",
-                        "parts": [{"text": PROMPT_DIRECTIVE}]
+                        "parts": [{"text": full_directive}]
                     }
                 ] + self.context_history  # Include the directive and history
             }
@@ -138,6 +163,11 @@ class ExecuteGeneratedScriptOperator(bpy.types.Operator):
                 return {'CANCELLED'}
 
             generated_code = parts[0]["text"]
+
+            # remove any backticks for code notation
+            generated_code = generated_code.replace("```python", "")
+            generated_code = generated_code.replace("```", "")
+
             if not generated_code.strip():
                 self.report({'WARNING'}, "Generated code is empty")
                 return {'CANCELLED'}
